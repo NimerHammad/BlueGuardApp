@@ -109,7 +109,7 @@ class PersonalSecurityApp(QWidget):
     def analyze_personal_malware(self):
         try:
             analysis_result = "Performing Personal Malware Analysis..."
-            personal_api_key = "8f55a1ef0230f47efc444d1055a233df793aa23757559e779003dec201b6cb50"
+            personal_api_key = "Use Your Own  Virus Total API Key"
             disk_path = "C:/"
             
             # Iterate through files in the disk for analysis
