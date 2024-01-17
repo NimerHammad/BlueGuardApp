@@ -12,7 +12,7 @@ import nmap
 import csv
 
 # Function to load data from CSV file
-def load_data(file_path="C:/Users/Developer Security/Desktop/personal_security_data.csv"):
+def load_data(file_path="C:/Users/Your-User-Name/Desktop/personal_security_data.csv"):
     try:
         data = np.genfromtxt(file_path, delimiter=',', skip_header=1)
         features = data[:, :-1]
@@ -93,7 +93,7 @@ class PersonalSecurityApp(QWidget):
             print(f"Random Forest Model Accuracy: {accuracy:.4f}")
 
             # Save the trained model back to the CSV file
-            save_data("C:/Users/Developer Security/Desktop/personal_security_data.csv", X_train, y_train)
+            save_data("C:/Users/Your-User-Name/Desktop/personal_security_data.csv", X_train, y_train)
 
             return model
         else:
