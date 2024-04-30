@@ -1,7 +1,41 @@
 import sys
 import threading
 import requests
-from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget, QPushButton, QTextEdit
+import QtWidgets, uic
+import sys
+class Ui(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Ui, self).__init__() # Call the inherited classes __init__ method
+        uic.loadUi('basic.ui', self) # Load the .ui file
+        self.show() # Show the GUI
+        <?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+app = QtWidgets.QApplication(sys.argv) # Create an instance of QtWidgets.QApplication
+window = Ui() # Create an instance of our class
+app.exec_() # Start the application
+from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget, QPushButton, QTextEdit, PyQt5
+from PyQt5 import QtWidgets, uic
+import sys
+class Ui(QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Ui, self).__init__() # Call the inherited classes __init__ method
+        uic.loadUi('basic.ui', self) # Load the .ui file
+        self.show() # Show the GUI
+        <?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry">
+            <rect>
+app = QtWidgets.QApplication(sys.argv) # Create an instance of QtWidgets.QApplication
+window = Ui() # Create an instance of our class
+app.exec_() # Start the application
+from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget, QPushButton, QTextEdit, PyQt5
+
 from PyQt5.QtGui import QTextCursor
 from datetime import datetime
 from sklearn.ensemble import RandomForestClassifier
@@ -134,11 +168,3 @@ class PersonalSecurityApp(QWidget):
         cursor = self.log_display.textCursor()
         cursor.movePosition(QTextCursor.End)
         self.log_display.setTextCursor(cursor)
-
-# Entry point for the application
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    personal_app = PersonalSecurityApp()
-    sys.exit(app.exec_())
-
-
