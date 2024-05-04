@@ -60,7 +60,10 @@ def load_data(file_path="C:/Users/Your-User-Name/Desktop/personal_security_data.
 def save_data(file_path, features, labels):
     try:
         data = np.column_stack((features, labels))
-        np.savetxt(file_path, data, delimiter=',', header='Feature1,Feature2,Label', comments='')
+        np.# The `savetxt` function in the code snippet you provided is used to save data to a CSV
+        # file. It takes the file path, data to be saved, delimiter (optional), header (optional),
+        # and comments (optional) as parameters.
+        savetxt(file_path, data, delimiter=',', header='Feature1,Feature2,Label', comments='')
         log_activity("Data saved to CSV file.", "Data Save")
     except Exception as e:
         log_activity(f"Error saving data: {str(e)}", "Data Save Error")
@@ -118,22 +121,25 @@ class PersonalSecurityApp(QWidget):
         # Load data from the CSV file
         features, labels = load_data()
         if features is not None and labels is not None:
-            # Further processing and model training...
-            X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
-            model = RandomForestClassifier(n_estimators=100, random_state=42)
-            model.fit(X_train, y_train)
-            test_predictions = model.predict(X_test)
-            accuracy = accuracy_score(y_test, test_predictions)
-            print(f"Random Forest Model Accuracy: {accuracy:.4f}")
+            return self._extracted_from_train_model_6(features, labels)
+        # Handle the case where data loading failed
+        print("Error loading data. Model not trained.")
+        return None
 
-            # Save the trained model back to the CSV file
-            save_data("C:/Users/Your-User-Name/Desktop/personal_security_data.csv", X_train, y_train)
+    # TODO Rename this here and in `train_model`
+    def _extracted_from_train_model_6(self, features, labels):
+        # Further processing and model training...
+        X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
+        model = RandomForestClassifier(n_estimators=100, random_state=42)
+        model.fit(X_train, y_train)
+        test_predictions = model.predict(X_test)
+        accuracy = accuracy_score(y_test, test_predictions)
+        print(f"Random Forest Model Accuracy: {accuracy:.4f}")
 
-            return model
-        else:
-            # Handle the case where data loading failed
-            print("Error loading data. Model not trained.")
-            return None
+        # Save the trained model back to the CSV file
+        save_data("C:/Users/Your-User-Name/Desktop/personal_security_data.csv", X_train, y_train)
+
+        return model
 
     # Function to execute custom action
     def execute_custom_action(self):
@@ -168,3 +174,11 @@ class PersonalSecurityApp(QWidget):
         cursor = self.log_display.textCursor()
         cursor.movePosition(QTextCursor.End)
         self.log_display.setTextCursor(cursor)
+
+# Entry point for the application
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    personal_app = PersonalSecurityApp()
+    sys.exit(app.exec_())
+
+
