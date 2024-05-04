@@ -1,4 +1,6 @@
-# BlueGuardPersonal
+# BlueGuardApp
+
+# Open-source security application using BlueGuardPersonal script
 
 BlueGuardPersonal is an open-source security tool designed for personal use, providing features such as custom actions, personal malware analysis, and real-time monitoring.
 
@@ -59,17 +61,3 @@ git commit -m "Description of your changes"
 git push origin feature-name
 
 5. Open a pull request on GitHub.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
