@@ -886,7 +886,8 @@
 				"ms-python.python",
 				"icsharpcode.ilspy-vscode",
 				"eamodio.gitlens",
-				"ms-vscode-remote.remote-containers"
+				"ms-vscode-remote.remote-containers",
+				"076923.python-image-preview"
 			]
 		}
 	}
