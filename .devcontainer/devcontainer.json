@@ -884,7 +884,9 @@
 			"extensions": [
 				"geecode.geecode-python",
 				"ms-python.python",
-				"icsharpcode.ilspy-vscode"
+				"icsharpcode.ilspy-vscode",
+				"eamodio.gitlens",
+				"ms-vscode-remote.remote-containers"
 			]
 		}
 	}
