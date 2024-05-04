@@ -5,5 +5,6 @@
         "genfromtxt",
         "nmap",
         "savetxt"
-    ]
+    ],
+    "python.linting.pylintEnabled": true
 }
